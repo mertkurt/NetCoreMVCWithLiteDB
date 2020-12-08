@@ -1,0 +1,36 @@
+﻿@{
+
+    ViewData["Title"] = "Makale Ekle";
+
+}
+
+@model NetCoreMVCWithLiteDB.Models.Makale
+
+<div class="row">
+
+    <div class="col-md-12">
+
+        <h2>Makale Ekle</h2>
+
+        <form asp-controller="Home" asp-action="MakaleEkle" method="post" enctype="multipart/form-data">
+
+            <input type="number" asp-for="ID" placeholder="ID değeri" />
+
+            <br />
+
+            <input type="text" asp-for="Baslik" placeholder="Başlık Yazılacak" />
+
+            <br />
+
+            <input type="text" multiple="multiple" asp-for="Icerik" placeholder="İçerik Yazılacak" />
+
+            <br />
+
+            <button type="submit">EKLE</button>
+
+        </form>
+
+    </div>
+
+</div>
+

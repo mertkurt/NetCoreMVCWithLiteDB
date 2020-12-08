@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Makale Listesi";
+}
+
+@model List<NetCoreMVCWithLiteDB.Models.Makale>
+
+<div class="row">
+    <div class="col-md-3">
+        <h2>MAKALE LİSTESİ</h2>
+        <br />
+        <a href="~/Home/MakaleEkle">MAKALE EKLE</a>
+        <br />
+        <table width="500">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Başlık</th>
+                    <th>Yazılma Tarihi</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (NetCoreMVCWithLiteDB.Models.Makale m in Model)
+                {
+                     <tr>
+                         <td>@m.ID</td>
+                         <td>@m.Baslik</td>
+                         <td>@m.YazilmaTarihi</td>
+                         <td>
+                             <a href="~/Home/MakaleGuncelle/@m.ID">Güncelle</a>
+                             &nbsp;
+                             <a href="~/Home/MakaleSil/@m.ID">Sil</a>
+                         </td>
+                     </tr>   
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
